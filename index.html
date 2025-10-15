@@ -7,26 +7,52 @@
 </head>
 
 <body>
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false"
+  <a-scene mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 4" vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
     <a-assets>
-      <!-- <img id="abelha" src="./abelha.png" />  coloca a nossa imagem literalmente como base--> 
-      <a-asset-item id="avatarModel" src="./model.gltf"></a-asset-item>
+      <a-asset-item id="abelhaModel" src="./model.gltf"></a-asset-item>
+
+      <a-asset-item id="florModel" src="./flor.gltf"></a-asset-item>
+
+      <a-asset-item id="aguaVivaModel" src="./scene.gltf"></a-asset-item>
+
+      <a-asset-item id="starModel" src="./stunned__star__animation.glb"></a-asset-item>
+
     </a-assets>
 
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
     <a-entity mindar-image-target="targetIndex: 0">
-      <!-- <a-plane src="#abelha" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane> -->
 
-      <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="1 1 1" src="#avatarModel"
+      <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.2 0.2 0.2" src="#abelhaModel"
         animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
 
     </a-entity>
 
-    
+    <a-entity mindar-image-target="targetIndex: 1">
+
+      <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="1 1 1" src="#florModel"
+        animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 2">
+
+      <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="10 10 10" src="#aguaVivaModel"
+        animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+
+    </a-entity>
+
+    <a-entity mindar-image-target="targetIndex: 3">
+
+      <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="1 1 1" src="#starModel"
+        animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+
+    </a-entity>
+
+
 
   </a-scene>
 </body>
