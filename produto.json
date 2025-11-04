@@ -1,0 +1,22 @@
+"produto" [
+    {
+        "nome": "abelhaModel",
+        "id": 0,
+        "modelo": "./model.gltf",
+        "escala": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5
+        }
+    }
+    {
+        "nome": "florModel",
+        "id": 1,
+        "modelo": "./flor.gltf",
+        "escala": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5
+        }
+    }
+]
