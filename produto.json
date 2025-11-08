@@ -1,22 +1,378 @@
-"produto" [
-    {
-        "nome": "abelhaModel",
-        "id": 0,
-        "modelo": "./model.gltf",
-        "escala": {
-            "x": 0.5,
-            "y": 0.5,
-            "z": 0.5
+{
+    "produto" : [
+        {
+            "id": 0,
+            "modelo": "./model.gltf",
+            "nome": "abelhaModel",
+            "peso": 100,
+            "categoria": "Abelha",
+            "valor_energetico": 100,
+            "proteinas": 100,
+            "carboidratos": 100,
+            "gorduras": 100,
+            "fibras": 100,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 1,
+            "modelo": "",
+            "nome": "arroz",
+            "peso": 100,
+            "categoria": "Carboidrato",
+            "valor_energetico": 128.3,
+            "proteinas": 2.5,
+            "carboidratos": 28.1,
+            "gorduras": 0.2,
+            "fibras": 1.6,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 2,
+            "modelo": "",
+            "nome": "banana",
+            "peso": 100,
+            "categoria": "Fibra",
+            "valor_energetico": 99,
+            "proteinas": 1.3,
+            "carboidratos": 25.8,
+            "gorduras": 0.3,
+            "fibras": 2,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 3,
+            "modelo": "",
+            "nome": "batata_frita",
+            "peso": 100,
+            "valor_energetico": 280,
+            "categoria": "Gorduras",
+            "proteinas": 4.3,
+            "carboidratos": 38,
+            "gorduras": 13.2,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 4,
+            "modelo": "",
+            "nome": "batata_palha",
+            "peso": 100,
+            "categoria": "Gorduras",
+            "valor_energetico": 552,
+            "proteinas": 45,
+            "carboidratos": 48,
+            "gorduras": 40,
+            "fibras": 2.4,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 5,
+            "modelo": "",
+            "nome": "beterraba",
+            "peso": 100,
+            "categoria": "Fibras",
+            "valor_energetico": 49,
+            "proteinas": 1.9,
+            "carboidratos": 11.1,
+            "gorduras": 0.1,
+            "fibras": 3.4,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 6,
+            "modelo": "",
+            "nome": "brocolis",
+            "peso": 100,
+            "categoria": "Fibras",
+            "valor_energetico": 25,
+            "proteinas": 2.1,
+            "carboidratos": 4.4,
+            "gorduras": 0.5,
+            "fibras": 3.4,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 7,
+            "modelo": "",
+            "nome": "carne_porco",
+            "peso": 100,
+            "categoria": "Proteina",
+            "valor_energetico": 262,
+            "proteinas": 32.1,
+            "carboidratos": 0,
+            "gorduras": 13.9,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 8,
+            "modelo": "",
+            "nome": "carne_vermelha",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 9,
+            "modelo": "",
+            "nome": "couve",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 10,
+            "modelo": "",
+            "nome": "feijao",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 11,
+            "modelo": "",
+            "nome": "frango",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 12,
+            "modelo": "",
+            "nome": "macarrao",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 13,
+            "modelo": "",
+            "nome": "mandioca",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 14,
+            "modelo": "",
+            "nome": "ovo_cozido",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 15,
+            "modelo": "",
+            "nome": "ovo_frito",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 16,
+            "modelo": "",
+            "nome": "peixe_frito",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 17,
+            "modelo": "",
+            "nome": "pizza_mucarela",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 18,
+            "modelo": "",
+            "nome": "repolho",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 19,
+            "modelo": "",
+            "nome": "salsicha",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 20,
+            "modelo": "",
+            "nome": "steak",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
+        },
+        {
+            "id": 21,
+            "modelo": "",
+            "nome": "tomate",
+            "peso": 100,
+            "categoria": "",
+            "valor_energetico": 0,
+            "proteinas": 0,
+            "carboidratos": 0,
+            "gorduras": 0,
+            "fibras": 0,
+            "escala": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.5
+            }
         }
-    }
-    {
-        "nome": "florModel",
-        "id": 1,
-        "modelo": "./flor.gltf",
-        "escala": {
-            "x": 0.5,
-            "y": 0.5,
-            "z": 0.5
-        }
-    }
-]
+    ]
+}
