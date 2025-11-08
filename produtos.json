@@ -1,0 +1,68 @@
+{
+  "produtos": [
+    {
+      "id": 0,
+      "nome": "Abelha",
+      "modelo": "./model.gltf",
+      "peso": 0.2,
+      "escala": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "valor_energético": 300,
+      "proteinas": 10,
+      "gorduras": 15,
+      "carboidratos": 35,
+      "fibras": 5
+    },
+    {
+      "id": 1,
+      "nome": "Flor",
+      "modelo": "./flor.gltf",
+      "peso": 0.3,
+      "escala": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "valor_energético": 300,
+      "proteinas": 10,
+      "gorduras": 15,
+      "carboidratos": 35,
+      "fibras": 5
+    },
+    {
+      "id": 2,
+      "nome": "Água-viva",
+      "modelo": "./scene.gltf",
+      "peso": 0.1,
+      "escala": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "valor_energético": 300,
+      "proteinas": 10,
+      "gorduras": 15,
+      "carboidratos": 35,
+      "fibras": 5
+    },
+    {
+      "id": 3,
+      "nome": "Estrela",
+      "modelo": "./stunned__star__animation.glb",
+      "peso": 0.15,
+      "escala": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "valor_energético": 300,
+      "proteinas": 10,
+      "gorduras": 15,
+      "carboidratos": 35,
+      "fibras": 5
+    }
+  ]
+}

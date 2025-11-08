@@ -7,6 +7,7 @@
   <style>
     body {
       margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     #controls {
@@ -14,7 +15,9 @@
       width: 100%;
       height: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
       position: fixed;
       cursor: pointer;
       z-index: 99999999999;
@@ -24,19 +27,47 @@
       font-size: 24px;
       width: 60px;
       height: 60px;
+      border-radius: 10px;
       background-color: rgba(240, 240, 240, 0.7);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border: none;
+      transition: transform 0.2s ease;
+    }
 
+
+    button:hover {
+      transform: scale(1.2);
     }
 
     #menos:hover {
-      cursor: pointer;
-      background-color: #F00;
+      background-color: #F55;
     }
 
     #mais:hover {
-      cursor: pointer;
-      background-color: #0F0;
+      background-color: #5F5;
+    }
+
+    #salvarLista:hover {
+      background-color: #55F;
+      color: white;
+    }
+
+    #salvarLista {
+      width: auto;
+      padding: 0 20px;
+    }
+
+    #info {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-size: 14px;
+      z-index: 9999999;
+      min-width: 200px;
+      display: none;
     }
   </style>
 </head>
@@ -44,77 +75,214 @@
 <body>
   <div id="controls">
     <button id="menos">-</button>
+    <button id="salvarLista">salvar produtos ativos</button>
     <button id="mais">+</button>
   </div>
 
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 4" vr-mode-ui="enabled: false"
+  <div id="info"></div>
+
+
+  <div id="info"></div>
+
+  <a-scene id="scene" mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 4" vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
-
-    <a-assets>
-      <a-asset-item id="abelhaModel" src="./model.gltf"></a-asset-item>
-      <a-asset-item id="florModel" src="./flor.gltf"></a-asset-item>
-      <a-asset-item id="aguaVivaModel" src="./scene.gltf"></a-asset-item>
-      <a-asset-item id="starModel" src="./stunned__star__animation.glb"></a-asset-item>
-    </a-assets>
-
+    <a-assets id="assets"></a-assets>
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-    <a-entity mindar-image-target="targetIndex: 0" id="target0">
-      <a-gltf-model id="model0" rotation="90 0 0" position="0 0 0.3" scale="0.5 0.5 0.5" src="#abelhaModel"></a-gltf-model>
-    </a-entity>
-
-    <a-entity mindar-image-target="targetIndex: 1" id="target1">
-      <a-gltf-model id="model1" rotation="90 0 0" position="0 0 0" scale="1 1 1" src="#florModel"></a-gltf-model>
-    </a-entity>
-
-    <a-entity mindar-image-target="targetIndex: 2" id="target2">
-      <a-gltf-model id="model2" rotation="90 0 0" position="0 0 0.1" scale="10 10 10" src="#aguaVivaModel"></a-gltf-model> </a-entity>
-
-    <a-entity mindar-image-target="targetIndex: 3" id="target3">
-      <a-gltf-model id="model3" rotation="90 0 0" position="0 0 0.1" scale="0.3 0.3 0.3" src="#starModel"></a-gltf-model>
-    </a-entity>
-
   </a-scene>
 
   <script>
-    let modeloativo = null;
+    let modeloAtivo = null;
+    let produtoAtivo = null;
+    let produtos = [];
+    let modelosSalvos = [];
+    let modelosAtivos = [];
 
-    document.querySelectorAll('a-entity[mindar-image-target]').forEach((entity) => {
-      entity.addEventListener('targetFound', () => {
-        modeloativo = entity.querySelector('a-gltf-model');
-      });
-      entity.addEventListener('targetLost', () => {
-        if (activeModel === entity.querySelector('a-gltf-model')) {
-          activeModel = null;
-        }
-      });
-    });
+    // -------------------------
+    //  Carregar produtos do JSON
+    // -------------------------
 
-    document.getElementById('mais').addEventListener('click', () => {
-      if (modeloativo != null) {
-        let scale = modeloativo.getAttribute('scale');
-        modeloativo.setAttribute('scale', {
+    async function carregarProdutos() {
+      try {
+        const resposta = await fetch('./produtos.json');
+        const dados = await resposta.json();
+        produtos = dados.produtos;
+
+        const scene = document.getElementById("scene");
+        const assets = document.getElementById("assets");
+
+        //-------------------------
+        //  Cria assets e entidades para cada produto no html
+        //-------------------------
+        produtos.forEach(produto => {
+          const asset = document.createElement("a-asset-item");
+          asset.setAttribute("id", `model_${produto.id}`);
+          asset.setAttribute("src", produto.modelo);
+          assets.appendChild(asset);
+
+          const entity = document.createElement("a-entity");
+          entity.setAttribute("mindar-image-target", `targetIndex: ${produto.id}`);
+          entity.setAttribute("id", `target_${produto.id}`);
+
+          const model = document.createElement("a-gltf-model");
+          model.setAttribute("id", `model3d_${produto.id}`);
+          model.setAttribute("rotation", "90 0 0");
+          model.setAttribute("position", "0 0 0.1");
+          model.setAttribute("scale", `${produto.escala.x} ${produto.escala.y} ${produto.escala.z}`);
+          //--------------------------
+          //Após a troca de servidor, trocar SRC por URL e inserir no JSON o caminho inteiro da imagem
+          //--------------------------
+          console.log("Após a troca de servidor, trocar SRC por URL e inserir no JSON o caminho inteiro da imagem");
+          model.setAttribute("src", `#model_${produto.id}`);
+
+
+          entity.appendChild(model);
+          scene.appendChild(entity);
+        });
+
+        document.querySelectorAll("a-entity[mindar-image-target]").forEach((entity) => {
+          entity.addEventListener("targetFound", () => {
+            const id = parseInt(entity.id.split("_")[1]);
+            const modelo = entity.querySelector("a-gltf-model");
+            const produtoBase = produtos.find(p => p.id === id);
+            const produtoSalvo = modelosSalvos.find(p => p.id === id);
+
+            modeloAtivo = modelo;
+            produtoAtivo = produtoBase;
+
+            // Restaura escala salva se existir
+            if (produtoSalvo) {
+              modelo.setAttribute("scale", produtoSalvo.escala);
+              Object.assign(produtoAtivo, produtoSalvo);
+            }
+
+            //  Adiciona aos ativos se ainda não estiver
+            if (!modelosAtivos.some(p => p.id === id)) {
+              modelosAtivos.push(produtoAtivo);
+            }
+
+            // Atualiza painel de informações (RETIRAR FUNÇÃO TESTE)
+            atualizarPainel();
+            document.getElementById("info").style.display = "block";
+          });
+
+          //-------------------------
+          // Funções de encontrar e perder alvo
+          //-------------------------
+          entity.addEventListener("targetLost", () => {
+            const id = parseInt(entity.id.split("_")[1]);
+
+            // Atualiza informações no histórico salvo
+            const produtoAtivoAgora = modelosAtivos.find(p => p.id === id);
+            const modelo = entity.querySelector("a-gltf-model");
+            if (produtoAtivoAgora && modelo) {
+              const escala = modelo.getAttribute("scale");
+              const indexSalvo = modelosSalvos.findIndex(p => p.id === id);
+              if (indexSalvo !== -1) {
+                modelosSalvos[indexSalvo] = { ...produtoAtivoAgora, escala };
+              } else {
+                modelosSalvos.push({ ...produtoAtivoAgora, escala });
+              }
+            }
+
+            // Remove da lista de ativos (saiu de cena)
+            modelosAtivos = modelosAtivos.filter(p => p.id !== id);
+
+            if (modeloAtivo === modelo) {
+              modeloAtivo = null;
+              produtoAtivo = null;
+              document.getElementById("info").style.display = "none";
+            }
+          });
+        });
+      } catch (erro) {
+        console.error("Erro ao carregar JSON:", erro);
+      }
+    }
+
+    // -------------------------
+    //FUÇÃO DO PAINEL (TESTE)
+    // -------------------------
+    function atualizarPainel() {
+      if (!produtoAtivo || !modeloAtivo) return;
+
+      const info = document.getElementById("info");
+      const escala = modeloAtivo.getAttribute("scale");
+      const fator = escala.x / produtoAtivo.escala.x;
+
+      const peso = (produtoAtivo.peso * fator).toFixed(2);
+      const valor_energético = (produtoAtivo.valor_energético * fator).toFixed(0);
+      const proteinas = (produtoAtivo.proteinas * fator).toFixed(1);
+      const gorduras = (produtoAtivo.gorduras * fator).toFixed(1);
+      const carboidratos = (produtoAtivo.carboidratos * fator).toFixed(1);
+      const fibras = (produtoAtivo.fibras * fator).toFixed(1);
+
+      info.innerHTML = `
+      <strong>${produtoAtivo.nome}</strong><br>
+      Peso: ${peso} kg<br>
+      Valor energético: ${valor_energético} Kcal<br>
+      Proteínas: ${proteinas} g<br>
+      Gorduras: ${gorduras} g<br>
+      Carboidratos: ${carboidratos} g<br>
+      Fibras: ${fibras} g
+    `;
+
+      // Atualiza os valores dentro dos ativos (não retirar)
+      const indexAtivo = modelosAtivos.findIndex(p => p.id === produtoAtivo.id);
+      if (indexAtivo !== -1) {
+        modelosAtivos[indexAtivo] = {
+          ...produtoAtivo,
+          peso,
+          valor_energético,
+          proteinas,
+          gorduras,
+          carboidratos,
+          fibras,
+          escala: { ...escala }
+        };
+      }
+    }
+
+    // -------------------------
+    //  Controles de escala
+    // -------------------------
+    document.getElementById("mais").addEventListener("click", () => {
+      if (modeloAtivo) {
+        const scale = modeloAtivo.getAttribute("scale");
+        modeloAtivo.setAttribute("scale", {
           x: scale.x * 1.1,
           y: scale.y * 1.1,
           z: scale.z * 1.1
         });
+        atualizarPainel();
       }
     });
 
-    document.getElementById('menos').addEventListener('click', () => {
-      if (modeloativo != null) {
-        let scale = modeloativo.getAttribute('scale');
-        modeloativo.setAttribute('scale', {
+    document.getElementById("menos").addEventListener("click", () => {
+      if (modeloAtivo) {
+        const scale = modeloAtivo.getAttribute("scale");
+        modeloAtivo.setAttribute("scale", {
           x: scale.x * 0.9,
           y: scale.y * 0.9,
           z: scale.z * 0.9
         });
+        atualizarPainel();
       }
     });
 
-    
+    // -------------------------
+    // Botão de salvar lista (apenas os os itens ativos) (está no console)
+    // -------------------------
+    document.getElementById("salvarLista").addEventListener("click", () => {
+      if (modelosAtivos.length === 0) {
+        console.warn("Nenhum modelo ativo no momento!");
+        return;
+      }
+      console.log("Modelos ATIVOS:", modelosAtivos);
+    });
 
+    window.addEventListener("load", carregarProdutos);
   </script>
+
 
 </body>
 
