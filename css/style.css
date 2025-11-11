@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+#game {
+    width: 90%;
+    height: 90%;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#prod {
+    display: flex;
+    justify-content: space-between;
+}
+
+#prod p {
+    font-weight: bold;
+    color: white;
+    font-size: 1.8rem;
+}
+
+#prod p:first-child {
+    text-transform: uppercase;
+}
+
+#controls {
+    display: flex;
+
+    justify-content: space-between;
+    height: 15%;
+}
+
+#menos, #mais {
+    width: 12%;
+
+    font-size: 3rem;
+    color: white;
+
+    border-radius: .5rem;
+    border: none;
+}
+
+#menos {
+    background-color: #A70003;
+}
+
+#mais {
+    background-color: #166C00;
+}
+
+#salvarLista {
+    width: 35%;
+
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+
+    border-radius: .5rem;
+    border: none;
+
+    background-color: #27C500;
+}
+
+#info {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    z-index: 9999999;
+    min-width: 200px;
+    display: none;
+}
