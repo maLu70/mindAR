@@ -3,7 +3,7 @@
     {
       "id": 0,
       "nome": "Abelha",
-      "modelo": "./model.gltf",
+      "modelo": "/model/model.gltf",
       "peso": 0.2,
       "escala": {
         "x": 0.5,
@@ -19,7 +19,7 @@
     {
       "id": 1,
       "nome": "Flor",
-      "modelo": "./flor.gltf",
+      "modelo": "/model/flor.gltf",
       "peso": 0.3,
       "escala": {
         "x": 0.5,
@@ -35,7 +35,7 @@
     {
       "id": 2,
       "nome": "Água-viva",
-      "modelo": "./scene.gltf",
+      "modelo": "/model/scene.gltf",
       "peso": 0.1,
       "escala": {
         "x": 0.5,
@@ -51,7 +51,7 @@
     {
       "id": 3,
       "nome": "Estrela",
-      "modelo": "./stunned__star__animation.glb",
+      "modelo": "/model/stunned__star__animation.glb",
       "peso": 0.15,
       "escala": {
         "x": 0.5,
