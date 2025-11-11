@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-image: url("/img/xadVerde.png");
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    background-color: white;
+    width: 85vw;
+    height: 80vh;
+
+    border-radius: 1.5rem;
+}
