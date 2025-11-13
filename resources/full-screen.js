@@ -9,7 +9,6 @@ let trigger;
 let isFull;
 let method;
 let closed;
-let trigger_w;
 
 //-- Funções
 let enterFullScreen;
