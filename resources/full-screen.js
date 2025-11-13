@@ -5,7 +5,6 @@
 let fullScreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
 let fullsScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
 
-document.getElementsById('teste').click();
 let tools;
 let trigger;
 let isFull;
@@ -18,6 +17,7 @@ let enterFullScreen;
 let exitFullScreen;
 let isFullScreen;
 
+document.getElementById('teste').click();
     function toggleFullScreen(tela, callBack) {
     isFull = false;
     method = null;
