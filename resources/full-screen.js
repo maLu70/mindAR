@@ -17,7 +17,7 @@ let isFullScreen;
 
 //ESSE .CLICK() NÃO EXISTE MAIS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
-document.getElementsByTagName('body')
+    document.getElementsByTagName('body');
     function toggleFullScreen(tela, callBack) {
     isFull = false;
     method = null;
