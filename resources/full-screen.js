@@ -16,7 +16,7 @@ let enterFullScreen;
 let exitFullScreen;
 let isFullScreen;
 
-document.getElementsByTagName('body').click();
+document.getElementsByTagName('body');
     function toggleFullScreen(tela, callBack) {
     isFull = false;
     method = null;
