@@ -22,8 +22,6 @@ let isFullScreen;
     isFull = false;
     method = null;
 
-    tela.style.position = "absolute";
-
     if (tela.requestFullscreen) {
         tela.requestFullscreen();
         isFull = true;
