@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 
-    background-image: url("mindAR/img/xadVerde.png");
+    background-image: url("/mindAR/img/xadVerde.png");
 
     display: flex;
     flex-direction: column;
@@ -12,6 +12,13 @@ body {
 
     width: 100vw;
     height: 100vh;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
 }
 
 #game h1 {
@@ -26,7 +33,7 @@ body {
 }
 
 #game button {
-width: 15%;
+    width: 15%;
 
     font-size: 3rem;
     color: #009040;
