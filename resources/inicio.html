@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/mindAR/resources/full-screen.js" defer></script>
+    <link rel="stylesheet" href="/mindAR/css/inicio.css">
     <title>Prato Feito | Bem vindo(a)!</title>
 </head>
 <body>
-    <div >
-        <button onclick="enterFullScreen()">Começar</button>
+    <div id="game">
+        <h1>Seja bem-vindo(a)/h1>
+        <h3>Clique em "Iniciar" para começar a montagem</h3>
+        <button onclick="enterFullScreen(document.getElementById('game'))">Iniciar</button>
     </div>
+
+    <script src="/mindAR/resources/full-screen.js"></script>
 </body>
 </html>
