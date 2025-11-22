@@ -188,3 +188,10 @@ document.getElementById("salvarLista").addEventListener("click", () => {
 });
 
 window.addEventListener("load", carregarProdutos);
+
+// -------------------------
+// Função localStorage pra passar os dados para outra página
+// -------------------------
+function salvarItens() {
+    localStorage.setItem("modelosSelecionados", modelosSalvos)
+}

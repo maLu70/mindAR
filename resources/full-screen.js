@@ -5,18 +5,13 @@
 let fullScreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
 let fullsScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
 
-
 let isFull = false;
-let method;
-let elementToToggle
-
-let enterFullScreen;
 
 function isFullScreenSupported() {
     return !!(document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled)
 }
 
-function enterFullScreen() {
+function enterFullScreen(element) {
     if (!isFullScreenSupported()) {
         console.log("Navegador não suporta")
         return
@@ -40,7 +35,7 @@ function enterFullScreen() {
     isFull = true;
 }
 
-isFullScreen = function() {
+const isFullScreen = function() {
     return document.fullscreen ||
            document.msFullScreen ||
            document.mozFullScreen ||
