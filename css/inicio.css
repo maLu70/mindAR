@@ -12,6 +12,7 @@ body {
 
     width: 100vw;
     height: 100vh;
+    text-shadow: 2px #302d2d
 }
 
 #game {
@@ -34,12 +35,12 @@ body {
 }
 
 #game button {
-    width: 15%;
-
+    width: 45%;
+    font-weight: bold;
     font-size: 3rem;
-    color: #bdcfa7;
-    background-color: #bbd0a7;
+    color: #FFFFFF;
+    background-color: #bbd0a700;
 
     border-radius: .5rem;
-    border: #bbd0a7;
+    border: #FFFFFF;
 }
