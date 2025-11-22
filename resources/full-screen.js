@@ -5,51 +5,39 @@
 let fullScreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
 let fullsScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
 
-let trigger;
-let isFull;
+
+let isFull = false;
 let method;
-let closed;
+let elementToToggle
 
-//-- Funções
 let enterFullScreen;
-let exitFullScreen;
-let isFullScreen;
 
-//ESSE .CLICK() NÃO EXISTE MAIS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+function isFullScreenSupported() {
+    return !!(document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled)
+}
 
-    document.getElementsByTagName('body');
-    function toggleFullScreen(tela, callBack) {
-    isFull = false;
-    method = null;
-
-    if (tela.requestFullscreen) {
-        tela.requestFullscreen();
-        isFull = true;
-        method = "";
-
-    } else if (tela.msRequestFullscreen) {
-        tela.msRequestFullscreen();
-        isFull = true;
-            method = "ms";
-
-    } else if (tela.mozRequestFullscreen) {
-        tela.mozRequestFullscreen();
-        isFull = true;
-        method = "moz";
-
-    } else if (tela.webktiRequestFullscreen) {
-        tela.msRequestFullscreen();
-        isFull = true;
-        method = "webkit";
-
-    } else {
-        console.log("Não tem jeito, paizão")
+function enterFullScreen() {
+    if (!isFullScreenSupported()) {
+        console.log("Navegador não suporta")
+        return
     }
 
-    if (isFull) {
-        if (callBack !=  undefined) callBack();
-        
+    elementToToggle = element || document.documentElement
+
+    if (elementToToggle.requestFullscreen) {
+        elementToToggle.requestFullscreen()
+
+    } else if (elementToToggle.mozRequestFullscreen) { 
+        elementToToggle.mozRequestFullscreen()
+
+    } else if (elementToToggle.webkitRequestFullscreen) {
+        elementToToggle.webkitRequestFullscreen()
+
+    } else if (elementToToggle.msRequestFullscreen) { 
+        elementToToggle.msRequestFullscreen()
+
     }
+    isFull = true;
 }
 
 isFullScreen = function() {
