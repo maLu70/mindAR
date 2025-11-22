@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 
-    background-image: url("/img/xadVerde.png");
+    background-image: url("mindAR/img/xadVerde.png");
 
     display: flex;
     flex-direction: column;
