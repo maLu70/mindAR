@@ -18,7 +18,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
+    background-image: url("/mindAR/img/xadVerde.png");
 }
 
 #game h1 {
@@ -36,8 +37,9 @@ body {
     width: 15%;
 
     font-size: 3rem;
-    color: #009040;
+    color: #bdcfa7;
+    background-color: #bbd0a7;
 
     border-radius: .5rem;
-    border: #FFFFFF;
+    border: #bbd0a7;
 }
