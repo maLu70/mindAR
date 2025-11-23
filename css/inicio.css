@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 
-    background-image: url("/mindAR/img/xadVerde.png");
+    background-image: url("/img/xadVerde.png");
 
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@ body {
 
     width: 100vw;
     height: 100vh;
-    text-shadow: 2px #302d2d
+    text-shadow: 2px #302d2d;
 }
 
 #game {
