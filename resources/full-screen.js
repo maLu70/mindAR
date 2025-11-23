@@ -21,23 +21,22 @@ function enterFullScreen(element) {
     if (elementToToggle.requestFullscreen) {
         elementToToggle.requestFullscreen()
 
-    } else if (elementToToggle.mozRequestFullscreen) { 
+    } else if (elementToToggle.mozRequestFullscreen) {
         elementToToggle.mozRequestFullscreen()
 
     } else if (elementToToggle.webkitRequestFullscreen) {
         elementToToggle.webkitRequestFullscreen()
 
-    } else if (elementToToggle.msRequestFullscreen) { 
+    } else if (elementToToggle.msRequestFullscreen) {
         elementToToggle.msRequestFullscreen()
-
     }
     isFull = true;
 }
 
-isFullScreen = function() {
+isFullScreen = function () {
     return document.fullscreen ||
-           document.msFullScreen ||
-           document.mozFullScreen ||
-           document.webkitFullScreen;
+        document.msFullScreen ||
+        document.mozFullScreen ||
+        document.webkitFullScreen;
 }
 

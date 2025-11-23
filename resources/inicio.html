@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/css/inicio.css">
-    <title>Prato Feito | Bem vindo(a)!</title>
+    <script src="/mindAR/resources/full-screen.js" defer></script>
+
+    <title>Prato Feito</title>
 </head>
 
 <body>
-    <div id="game">
-        <h1>Seja Bem-vindo(a)</h1>
-        <h3>Clique em "Começar" para iniciar a montagem do seu prato</h3>
-        <button onclick="enterFullScreen(document.getElementById('game'))">Começar</button>
+
+    <div id="container">
+        <img src="/img/logoProvisória.png" alt="">
+
+        <div id="buttons">
+            <button id="tutorial">Como jogar</button>
+            <button onclick="enterFullScreen(document.getElementById('container'))" id="comecar">Começar</button>
+        </div>
     </div>
 
-    <script src="/mindAR/resources/full-screen.js"></script>
 </body>
 
 </html>
