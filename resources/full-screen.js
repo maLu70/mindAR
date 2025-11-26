@@ -7,32 +7,32 @@ function isFullScreenSupported() {
     return !!(document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled)
 }
 
-window.open("index.html")
 
 function enterFullScreen(element) {
-
+    
     if (!isFullScreenSupported()) {
         console.log("Navegador não suporta")
         return
     }
-
+    
     elementToToggle = element || document.documentElement
-
+    
     if (elementToToggle.requestFullscreen) {
         elementToToggle.requestFullscreen()
-
+        
     } else if (elementToToggle.mozRequestFullscreen) {
         elementToToggle.mozRequestFullscreen()
-
+        
     } else if (elementToToggle.webkitRequestFullscreen) {
         elementToToggle.webkitRequestFullscreen()
-
+        
     } else if (elementToToggle.msRequestFullscreen) {
         elementToToggle.msRequestFullscreen()
     }
-
+    
     isFull = true;
     
+    window.open("index.html")
 }
 
 
