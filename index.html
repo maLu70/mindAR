@@ -16,31 +16,40 @@
 
 <body>
 
-  <div id="game">
+  <div class="inicio">
+    <img src="mindAR/img/logoProvisória.png" alt="">
 
-    <div id="prod">
-      <p>Tomate</p>
-      <p>100g</p>
-    </div>
-
-    <button onclick="enterFullScreen(document.getElementById('game'))">Iniciar</button>
-
-    <div id="controls">
-      <button id="menos">-</button>
-      <button id="salvarLista" type="submit">Analisar</button>
-      <button id="mais">+</button>
+    <div id="buttons">
+      <button id="tutorial">Como jogar</button>
+      <button onclick="enterFullScreen(document.getElementById('container'))" id="comecar">Começar</button>
     </div>
   </div>
 
+  <div id="jogo">
+    <div id="game">
 
-  <div id="info"></div>
+      <div id="prod">
+        <p>Tomate</p>
+        <p>100g</p>
+      </div>
 
-  <a-scene id="scene" mindar-image="imageTargetSrc: /mindAR/mind/targets.mind; maxTrack: 4" vr-mode-ui="enabled: false"
-    device-orientation-permission-ui="enabled: true">
-    <a-assets id="assets"></a-assets>
-    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-  </a-scene>
-<script src="/mindAR/resources/full-screen.js"></script>
+      <div id="controls">
+        <button id="menos">-</button>
+        <button id="salvarLista" type="submit">Analisar</button>
+        <button id="mais">+</button>
+      </div>
+    </div>
+
+
+    <div id="info"></div>
+
+    <a-scene id="scene" mindar-image="imageTargetSrc: /mindAR/mind/targets.mind; maxTrack: 4"
+      vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+      <a-assets id="assets"></a-assets>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    </a-scene>
+  </div>
+  <script src="/mindAR/resources/full-screen.js"></script>
 </body>
 
 </html>
