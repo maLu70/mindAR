@@ -32,10 +32,12 @@ function enterFullScreen(element) {
     
     isFull = true;
     
-    window.open("index.html")
 }
 
-
+function openIndex(elemento) {
+    window.open("/mindAR/index.html")
+    enterFullScreen(elemento)
+}
 
 isFullScreen = function () {
     return document.fullscreen ||
