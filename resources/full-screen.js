@@ -2,6 +2,8 @@ let fullScreenElement = document.fullscreenElement || document.mozFullScreenElem
 let fullsScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
 
 let isFull = false;
+let telaCheia = document.getElementById('jogo')
+
 
 function isFullScreenSupported() {
     return !!(document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled)
@@ -34,15 +36,12 @@ function enterFullScreen(element) {
     
 }
 
-function openIndex(elemento) {
-    window.open("/mindAR/index.html")
-    enterFullScreen(elemento)
-}
 
 isFullScreen = function () {
     return document.fullscreen ||
-        document.msFullScreen ||
-        document.mozFullScreen ||
-        document.webkitFullScreen;
+    document.msFullScreen ||
+    document.mozFullScreen ||
+    document.webkitFullScreen;
 }
 
+enterFullScreen(telaCheia)
