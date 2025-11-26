@@ -1,6 +1,3 @@
-// testar
-//https://concepcaoweb.com.br/fullscreem-com-javascript/
-
 let fullScreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
 let fullsScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
 
@@ -30,7 +27,10 @@ function enterFullScreen(element) {
     } else if (elementToToggle.msRequestFullscreen) {
         elementToToggle.msRequestFullscreen()
     }
+
     isFull = true;
+    
+    window.open("index.html")
 }
 
 isFullScreen = function () {
