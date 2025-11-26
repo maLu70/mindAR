@@ -7,7 +7,10 @@ function isFullScreenSupported() {
     return !!(document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled)
 }
 
+window.open("index.html")
+
 function enterFullScreen(element) {
+
     if (!isFullScreenSupported()) {
         console.log("Navegador não suporta")
         return
@@ -30,8 +33,9 @@ function enterFullScreen(element) {
 
     isFull = true;
     
-    window.open("index.html")
 }
+
+
 
 isFullScreen = function () {
     return document.fullscreen ||
