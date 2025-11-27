@@ -23,7 +23,7 @@ async function carregarProdutos() {
         produtos.forEach(produto => {
             const asset = document.createElement("a-asset-item");
             asset.setAttribute("id", `model_${produto.id}`);
-            asset.setAttribute("src", produto.modelo);
+            asset.setAttribute("url", produto.modelo);
             assets.appendChild(asset);
 
             const entity = document.createElement("a-entity");
@@ -39,7 +39,7 @@ async function carregarProdutos() {
             //Após a troca de servidor, trocar SRC por URL e inserir no JSON o caminho inteiro da imagem
             //--------------------------
             console.log("Após a troca de servidor, trocar SRC por URL e inserir no JSON o caminho inteiro da imagem");
-            model.setAttribute("src", `#model_${produto.id}`);
+            model.setAttribute("url", `#model_${produto.id}`);
 
 
             entity.appendChild(model);
