@@ -109,9 +109,11 @@ async function carregarProdutos() {
 // -------------------------
 //FUÇÃO DO PAINEL (TESTE)
 // -------------------------
+
 function atualizarPainel() {
     if (!produtoAtivo || !modeloAtivo) return;
 
+    /*
     const info = document.getElementById("info");
     const escala = modeloAtivo.getAttribute("scale");
     const fator = escala.x / produtoAtivo.escala.x;
@@ -131,7 +133,7 @@ function atualizarPainel() {
       Gorduras: ${gorduras} g<br>
       Carboidratos: ${carboidratos} g<br>
       Fibras: ${fibras} g
-    `;
+    `;*/
 
     // Atualiza os valores dentro dos ativos (não retirar)
     const indexAtivo = modelosAtivos.findIndex(p => p.id === produtoAtivo.id);
@@ -185,13 +187,8 @@ document.getElementById("salvarLista").addEventListener("click", () => {
         return;
     }
     console.log("Modelos ATIVOS:", modelosAtivos);
+    localStorage.setItem("modelosSalvos", modelosSalvos)
+    window.open('resouces/resultado.html')
 });
 
 window.addEventListener("load", carregarProdutos);
-
-// -------------------------
-// Função localStorage pra passar os dados para outra página
-// -------------------------
-function salvarItens() {
-    localStorage.setItem("modelosSelecionados", modelosSalvos)
-}
