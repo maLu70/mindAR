@@ -113,28 +113,6 @@ async function carregarProdutos() {
 function atualizarPainel() {
     if (!produtoAtivo || !modeloAtivo) return;
 
-    /*
-    const info = document.getElementById("info");
-    const escala = modeloAtivo.getAttribute("scale");
-    const fator = escala.x / produtoAtivo.escala.x;
-
-    const peso = (produtoAtivo.peso * fator).toFixed(2);
-    const valor_energético = (produtoAtivo.valor_energético * fator).toFixed(0);
-    const proteinas = (produtoAtivo.proteinas * fator).toFixed(1);
-    const gorduras = (produtoAtivo.gorduras * fator).toFixed(1);
-    const carboidratos = (produtoAtivo.carboidratos * fator).toFixed(1);
-    const fibras = (produtoAtivo.fibras * fator).toFixed(1);
-
-    info.innerHTML = `
-      <strong>${produtoAtivo.nome}</strong><br>
-      Peso: ${peso} kg<br>
-      Valor energético: ${valor_energético} Kcal<br>
-      Proteínas: ${proteinas} g<br>
-      Gorduras: ${gorduras} g<br>
-      Carboidratos: ${carboidratos} g<br>
-      Fibras: ${fibras} g
-    `;*/
-
     // Atualiza os valores dentro dos ativos (não retirar)
     const indexAtivo = modelosAtivos.findIndex(p => p.id === produtoAtivo.id);
     if (indexAtivo !== -1) {
@@ -187,8 +165,8 @@ document.getElementById("salvarLista").addEventListener("click", () => {
         return;
     }
     console.log("Modelos ATIVOS:", modelosAtivos);
-    localStorage.setItem("modelosSalvos", modelosSalvos)
-    window.open('resouces/resultado.html')
+    localStorage.setItem("modelosSalvos", JSON.stringify(modelosAtivos))
+    window.open('/mindAR/resouces/confirmacao.html')
 });
 
 window.addEventListener("load", carregarProdutos);
