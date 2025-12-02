@@ -24,6 +24,7 @@ async function carregarProdutos() {
             const asset = document.createElement("a-asset-item");
             asset.setAttribute("id", `model_${produto.id}`);
             asset.setAttribute("url", produto.modelo);
+            console.log(produto.nome+"="+produto.modelo)
             assets.appendChild(asset);
 
             const entity = document.createElement("a-entity");
