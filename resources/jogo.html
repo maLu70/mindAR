@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <link rel="stylesheet" href="/mindAR/css/style.css">
+  <script src="/mindAR/script.js" defer></script>
+  <title>Prato Feito</title>
+
+</head>
+
+<body>
+
+    <div id="game">
+
+      <div id="prod">
+        <p id="nome"></p>
+        <p id="peso"></p>
+      </div>
+
+      <div id="controls">
+        <button id="menos" onclick="menos()">-</button>
+        <button id="salvarLista" type="submit" onclick="salvar()">Analisar</button>
+        <button id="mais" onclick="mais()">+</button>
+      </div>
+    </div>
+
+    <a-scene id="scene" mindar-image="imageTargetSrc: /mindAR/mind/targets.mind; maxTrack: 10"
+      vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+      <a-assets id="assets"></a-assets>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    </a-scene>
+
+</body>
+
+</html>
