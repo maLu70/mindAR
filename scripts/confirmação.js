@@ -1,41 +1,41 @@
-document.addEventListener("DOMContentLoaded", function() {
-    addElemento();
 
-    const btnVoltar = document.getElementById("voltar")
-    btnVoltar.addEventListener("click", function() {
-        window.close()
-    })
+const produtosSalvos = localStorage.getItem("produtos");
+    const produtos = JSON.parse(produtosSalvos);
 
-    const btnConfirmar = document.getElementById("confirmar")
-    btnConfirmar.addEventListener("click", function() {
-        window.open('/mindAR/resouces/resultado.html')
-    })
-})
+    produtos.forEach(produto => {
+        console.log(produto);
+        
+        const alimentoDiv = document.createElement('div');
+        alimentoDiv.className = 'alimento';
 
-function addElemento() {
-    const modelosSavlosString = localStorage.getItem("modelosSalvos")
-    const modelosSalvos = JSON.parse(modelosSavlosString)
-    const container = document.getElementById("listaAlimentos")
+        const bloc1Div = document.createElement('div');
+        bloc1Div.className = 'bloc1';
 
-    if (modelosSalvos && modelosSalvos.legth > 0) {
-        modelosSalvos.array.forEach(produto => {
-            const novaDiv = document.createElement('div')
-            novaDiv.className = 'alimento'
+        const img = document.createElement('img');
+        img.src = produto.foto;
+        img.alt = produto.nome;
+        img.className = 'imgAlimento';
 
-            novaDiv.innerHTML = `
-                <div class="bloc1">
-                    <img src="/img/xadVerde.png" class="imgAlimento">
-                    <div class="infAlimento">
-                        <h3>${produto.nome}</h3>
-                        <h4>Rico em: ${produto.categoria}</h4>
-                    </div>
-                </div>
-            <p>${produto.peso ? produto.peso.toFixed(2) + 'g' : 'Peso não calculado'}</p>`
+        const infDiv = document.createElement('div');
+        infDiv.className = 'infAlimento';
 
-            container.appendChild(novaDiv)
-        });
+        const h3 = document.createElement('h3');
+        h3.textContent = produto.nome;
 
-    } else {
-        container.innerHTML = '<p>Nenhum alimento salvo</p>'
-    }
-}
+        const h4 = document.createElement('h4');
+        h4.textContent = produto.categoria;
+
+        const pesoP = document.createElement('p');
+        pesoP.textContent = `${produto.peso}g`;
+
+        infDiv.appendChild(h3);
+        infDiv.appendChild(h4);
+
+        bloc1Div.appendChild(img);
+        bloc1Div.appendChild(infDiv);
+
+        alimentoDiv.appendChild(bloc1Div);
+        alimentoDiv.appendChild(pesoP);
+
+        container.appendChild(alimentoDiv);
+    });

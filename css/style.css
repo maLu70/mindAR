@@ -44,7 +44,7 @@ body {
 
 #controls {
     display: flex;
-
+    z-index: 9999999999;
     justify-content: space-between;
     height: 15%;
 }
@@ -60,11 +60,22 @@ body {
 }
 
 #menos {
+    transition:0.3s;
     background-color: #A70003;
+}
+#menos:hover{
+    background-color: #5a0002;
+    cursor: pointer;
+    
 }
 
 #mais {
+    transition:0.3s;
     background-color: #166C00;
+}
+#mais:hover{
+    background-color: #0f4700;
+    cursor: pointer;
 }
 
 #salvarLista {
@@ -78,17 +89,4 @@ body {
     border: none;
 
     background-color: #27C500;
-}
-
-#info {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: 14px;
-    z-index: 9999999;
-    min-width: 200px;
-    display: none;
 }

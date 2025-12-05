@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
   <link rel="stylesheet" href="/mindAR/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/script.js" defer></script>
   <title>Prato Feito</title>
 
@@ -19,19 +20,16 @@
     <div id="game">
 
       <div id="prod">
-        <p>Tomate</p>
-        <p>100g</p>
+        <p id="nome"></p>
+        <p id="peso"></p>
       </div>
 
       <div id="controls">
-        <button id="menos">-</button>
-        <button id="salvarLista" type="submit">Analisar</button>
-        <button id="mais">+</button>
+        <button id="menos" onclick="menos()">-</button>
+        <button id="salvarLista" type="submit" onclick="salvar()">Analisar</button>
+        <button id="mais" onclick="mais()">+</button>
       </div>
     </div>
-
-
-    <div id="info"></div>
 
     <a-scene id="scene" mindar-image="imageTargetSrc: /mind/targets.mind; maxTrack: 4"
       vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
