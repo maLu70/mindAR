@@ -244,6 +244,6 @@ function salvar(){
     console.log(dados);
     
     localStorage.setItem("produtos", dados);
-    window.location.replace("/resources/confirmacao.html");
+    window.location.replace("MindAR/resources/confirmacao.html");
 }
 window.addEventListener("load", carregarProdutos);
