@@ -90,3 +90,10 @@ body {
 
     background-color: #27C500;
 }
+
+#none{
+    display: block;
+}
+#block{
+    display: none;
+}

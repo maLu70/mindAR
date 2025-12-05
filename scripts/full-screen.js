@@ -1,47 +1,16 @@
-let fullScreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
-let fullsScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
-
-let isFull = false;
-let telaCheia = document.getElementById('jogo')
-
-
-function isFullScreenSupported() {
-    return !!(document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled)
-}
-
-
-function enterFullScreen(element) {
-    
-    if (!isFullScreenSupported()) {
-        console.log("Navegador não suporta")
-        return
-    }
-    
-    elementToToggle = element || document.documentElement
-    
-    if (elementToToggle.requestFullscreen) {
-        elementToToggle.requestFullscreen()
-        
-    } else if (elementToToggle.mozRequestFullscreen) {
-        elementToToggle.mozRequestFullscreen()
-        
-    } else if (elementToToggle.webkitRequestFullscreen) {
-        elementToToggle.webkitRequestFullscreen()
-        
-    } else if (elementToToggle.msRequestFullscreen) {
-        elementToToggle.msRequestFullscreen()
-    }
-    
-    isFull = true;
+function enterFullScreen() {
+    console.log("oi")
+    document.documentElement.requestFullscreen()
     
 }
 
-
-isFullScreen = function () {
-    return document.fullscreen ||
-    document.msFullScreen ||
-    document.mozFullScreen ||
-    document.webkitFullScreen;
+function proximap(){
+    enterFullScreen();
+    const block = document.getElementById("trocarblock");
+    block.style.display = "block"
+    block.style.zIndex = "999"
+    const none = document.getElementById("container");
+    none.style.zIndex = "0"
+    none.style.display = "none";
+    
 }
-
-enterFullScreen(telaCheia)

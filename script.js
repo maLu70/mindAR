@@ -239,11 +239,4 @@ function calcularTotalNutricional() {
 }
 
 
-function salvar(){
-    const dados = JSON.stringify(modelosAtivos);
-    console.log(dados);
-    
-    localStorage.setItem("produtos", dados);
-    window.location.replace("/resources/confirmacao.html");
-}
 window.addEventListener("load", carregarProdutos);
