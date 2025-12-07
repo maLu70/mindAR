@@ -247,7 +247,7 @@ function salvar() {
         console.log(dados);
 
         localStorage.setItem("produtos", dados);
-        window.location.replace("/mindAR/resources/confirmacao.html");
+        window.location.replace("./resources/confirmacao.html");
     } else {
         alert("Escaneie ao menos um alimento para o prato!")
     }
