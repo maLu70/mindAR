@@ -5,6 +5,18 @@ let produtos = [];
 let modelosAtivos = [];
 let modelosDetectados = [];
 
+try {
+    let produtosanteriores = localStorage.getItem("produtos");
+
+    if (produtosanteriores) {
+        modelosDetectados = JSON.parse(produtosanteriores);
+    }
+} catch (e) {
+    console.log("erro " + e + " ao procurar produto anterior.");
+}
+
+
+
 async function carregarProdutos() {
     try {
         const resposta = await fetch('./produtos.json');
@@ -242,15 +254,12 @@ function calcularTotalNutricional() {
 
 function salvar() {
 
-    if (modelosAtivos.length >= 1) {
-        const dados = JSON.stringify(modelosAtivos);
-        console.log(dados);
+    const dados = JSON.stringify(modelosAtivos);
+    console.log(dados);
 
-        localStorage.setItem("produtos", dados);
-        window.location.replace("./resources/confirmacao.html");
-    } else {
-        alert("Escaneie ao menos um alimento para o prato!")
-    }
+    localStorage.setItem("produtos", dados);
+    window.location.replace("./resources/confirmacao.html");
+
 
 }
 document.querySelector("a-scene").addEventListener("loaded", carregarProdutos);

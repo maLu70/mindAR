@@ -9,12 +9,15 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
 
-    <link rel="stylesheet" href="/mindAR/css/inicio.css">
+    <link rel="stylesheet" href="./css/inicio.css">
 
-    <link rel="stylesheet" href="/mindAR/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 
-    <script src="/mindAR/scripts/full-screen.js" defer></script>
+    <script src="./scripts/full-screen.js" defer></script>
+
+    <script src="./script.js" defer></script>
+
 
     <title>Prato Feito</title>
 
@@ -23,10 +26,10 @@
 <body>
 
     <div id="container" style="z-index: 3;">
-        <img src="/mindAR/img/logoProvisória.png" alt="">
+        <img src="./img/logoProvisória.png" alt="">
 
         <div id="buttons">
-            <button id="tutorial">Como jogar</button>
+            <button id="tutorial" onclick="comoJogar()">Como jogar</button>
             <button onclick="proximap()" id="comecar">Começar</button>
         </div>
     </div>
@@ -46,17 +49,14 @@
             </div>
         </div>
 
-        <a-scene
-            mindar-image="imageTargetSrc: /mindAR/mind/targets.mind; maxTrack: 10; uiScanning: false; uiLoading: false"
-            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true"
+        <a-scene mindar-image="imageTargetSrc: ./mind/targets.mind; maxTrack: 10; uiScanning: false; uiLoading: false"
+            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true id="scene"
             device-orientation-permission-ui="enabled: true">
             <a-assets id="assets"></a-assets>
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         </a-scene>
     </div>
 
-
-    <script src="/mindAR/script.js" defer></script>
 </body>
 
 </html>

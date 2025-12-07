@@ -117,8 +117,19 @@ button {
 
 #voltar {
     background-color: #FF0002;
+    transition: 0.3s;
 }
 
 #confirmar {
     background-color: #20A200;
+    transition: 0.3;
+}
+
+#voltar:hover {
+    background-color: #5a0002;
+    cursor: pointer;
+}
+#confirmar:hover{
+    background-color: #197200;
+    cursor: pointer;
 }

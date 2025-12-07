@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-image: url("/img/xadVerde.png");
+    background-image: url("https://malu70.github.io/mindAR/img/xadVerde.png");
 
     display: flex;
     justify-content: center;
@@ -12,7 +12,7 @@ body {
     height: auto;
 }
 
-.container {
+.containeregras {
     background-color: white;
     width: 85vw;
     height: auto;
@@ -72,7 +72,7 @@ p {
 }
 
 button {
-    width: 48%;
+    width: 96%;
 
     font-size: 1rem;
     color: white;
@@ -84,8 +84,10 @@ button {
 
 #voltar {
     background-color: #FF0002;
+    transition: 0.3s;
 }
 
-#comecar {
-    background-color: #20A200;
+#voltar:hover {
+    background-color: #5a0002;
+    cursor: pointer;
 }

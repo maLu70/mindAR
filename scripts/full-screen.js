@@ -10,12 +10,15 @@ function proximap() {
     bloco.style.zIndex = "10";
 }
 
-const cena = document.getElementById("scene");
-    cena.style.display = "flex";
-    cena.style.position = "absolute";
-    cena.style.width = "100vw";
-    cena.style.height = "100vh";
-    cena.style.zIndex = "1";
+function comoJogar() {
+    window.location.replace("../resources/regras.html");
+}
 
+function incial() {
+    window.location.replace("../index.html");
+}
 
-
+function continuar() {
+    localStorage.setItem("produtos", localStorage.getItem("produtos"));
+    window.location.replace("../index.html?fs=1");
+}

@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-image: url("/mindAR/img/xadVerde.png");
+    background-image: url("https://malu70.github.io/mindAR/img/xadVerde.png");
 
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body {
     background-color: transparent;
     width: 85vw;
     height: 80vh;
-
+    background-color: white;
     border-radius: 1.5rem;
 
     display: flex;
@@ -52,9 +52,20 @@ button {
 
 #tutorial {
     background-color: #FF0002;
+    transition: 0.3s;
 }
 
 #comecar {
     background-color: #20A200;
+    transition: 0.3s;
+}
+
+#comecar:hover {
+    background-color: #0f4700;
+    cursor: pointer;
+}
+#tutorial:hover {
+    background-color: #5a0002;
+    cursor: pointer;
 }
 
