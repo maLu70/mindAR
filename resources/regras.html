@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/regras.css">
+
+</head>
+
+<body>
+
+    <div class="container" style="z-index: 3;">
+
+        <div id="regras">
+            <h1>Prato Feito</h1>
+            <p>
+                O objetivo principal é montar um prato com os alimentos que você costuma consumir,
+                levando em consideração a quantidade ideal de cada tipo de alimento para uma refeição nutritiva.
+                Após a finalização do prato, você receberá uma análise nutritiva e dicas de como melhorar
+                a qualidade do seu prato.
+            </p>
+
+            <h2>Os Cards</h2>
+            <p>
+                Os cards são cartas físicas necessárias para o jogo, existindo um total de X cards.
+                Cada card representa um alimento com suas informações nutricionais.
+            </p>
+            <a href="#" class="button-print">Clique aqui para imprimir você mesmo e jogar em casa</a>
+
+            <h2>Como Jogar</h2>
+
+            <h3>Passo 1: Iniciando o jogo</h3>
+            <ul>
+                <li>Na tela inicial, clique no botão <strong>“Começar”</strong> para iniciar a montagem do prato.</li>
+                <li>Será necessário o uso da câmera. Permita o acesso para continuar jogando.</li>
+            </ul>
+
+            <h3>Passo 2: Montagem do prato</h3>
+            <ul>
+                <li>Escolha os alimentos que farão parte do seu prato e pegue os cards correspondentes.</li>
+                <li>Aponte a câmera para um card para visualizar o alimento em 3D na tela.</li>
+                <li>Use os botões <strong>+</strong> e <strong>-</strong> para ajustar a quantidade (g) do último
+                    alimento
+                    reconhecido.</li>
+                <li>Mantenha o card anterior visível na câmera ao adicionar um novo alimento.</li>
+                <li>Clique em <strong>“analisar”</strong> para ir à tela de confirmação.</li>
+                <li><strong>OBS:</strong> Sempre será ajustado o último alimento detectado pela câmera. Caso queira
+                    alterar
+                    outro, remova-o da câmera e mostre-o novamente.</li>
+            </ul>
+
+            <h3>Passo 3: Confirmação do prato</h3>
+            <ul>
+                <li>Visualize todos os alimentos e quantidades adicionadas ao prato.</li>
+                <li>Use o botão <strong>“Voltar ao prato”</strong> para fazer alterações.</li>
+                <li>Clique em <strong>“confirmar”</strong> para solicitar a avaliação.</li>
+            </ul>
+
+            <h3>Passo 4: Resultado</h3>
+            <ul>
+                <li>O prato recebe uma nota entre <strong>0 e 100</strong>.</li>
+                <li>A análise nutricional (proteína, carboidrato, fibras, gordura, sódio e calorias) é baseada em uma
+                    dieta
+                    de 2000 kcal.</li>
+                <li>A avaliação aparece em barras indicando:
+                    <em>“Abaixo do recomendado”</em>, <em>“Recomendado”</em> ou <em>“Acima do recomendado”</em>.
+                </li>
+            </ul>
+
+        </div>
+
+        <div id="btnsRegras">
+            <button id="voltar">Voltar</button>
+            <button onclick="proximap()" id="comecar">Começar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
