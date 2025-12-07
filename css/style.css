@@ -110,4 +110,6 @@ body {
 a-scene {
     pointer-events: none !important;
 }
-
+.scanning{
+    display: none !important; 
+}
