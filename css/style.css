@@ -110,6 +110,7 @@ body {
 a-scene {
     pointer-events: none !important;
 }
-.scanning{
-    display: none !important; 
+
+#mindar-ui-scanning, #mindar-ui-loading {
+    display: none !important;
 }
