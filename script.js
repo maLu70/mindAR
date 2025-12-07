@@ -11,7 +11,7 @@ async function carregarProdutos() {
         const dados = await resposta.json();
         produtos = dados.produtos;
 
-        const scene = document.getElementById("scene");
+        const scene = document.querySelector("a-scene");
         const assets = document.getElementById("assets");
 
         produtos.forEach(produto => {
