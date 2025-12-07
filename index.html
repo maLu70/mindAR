@@ -15,7 +15,6 @@
 
 
     <script src="/mindAR/scripts/full-screen.js" defer></script>
-    <script src="/mindAR/script.js" defer></script>
 
     <title>Prato Feito</title>
 
@@ -49,11 +48,15 @@
 
         <a-scene
             mindar-image="imageTargetSrc: /mindAR/mind/targets.mind; maxTrack: 10; uiScanning: false; uiLoading: false"
-            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" device-orientation-permission-ui="enabled: true" vr-mode-ui="enabled: false">
+            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true"
+            device-orientation-permission-ui="enabled: true">
             <a-assets id="assets"></a-assets>
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         </a-scene>
     </div>
+
+
+    <script src="/mindAR/script.js" defer></script>
 </body>
 
 </html>

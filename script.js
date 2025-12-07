@@ -248,9 +248,10 @@ function salvar() {
 
         localStorage.setItem("produtos", dados);
         window.location.replace("/resources/confirmacao.html");
-    }else{
+    } else {
         alert("Escaneie ao menos um alimento para o prato!  ")
     }
 
 }
-window.addEventListener("load", carregarProdutos);
+document.querySelector("a-scene").addEventListener("loaded", carregarProdutos);
+
