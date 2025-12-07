@@ -30,7 +30,7 @@
 
 <body>
 
-    <div id="container" style="z-index: 9999999999;">
+    <div id="container" style="z-index: 3;">
         <img src="/mindAR/img/logoProvisória.png" alt="">
 
         <div id="buttons">
@@ -55,7 +55,7 @@
         </div>
 
         <a-scene id="scene" mindar-image="imageTargetSrc: /mind/targets.mind; maxTrack: 10" vr-mode-ui="enabled: false"
-            device-orientation-permission-ui="enabled: true">
+            device-orientation-permission-ui="enabled: true"  vr-mode-ui="enabled: false">
             <a-assets id="assets"></a-assets>
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         </a-scene>

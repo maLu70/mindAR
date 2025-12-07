@@ -21,6 +21,9 @@ body {
     height: 90%;
 
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     display: flex;
     flex-direction: column;
@@ -49,7 +52,8 @@ body {
     height: 15%;
 }
 
-#menos, #mais {
+#menos,
+#mais {
     width: 12%;
 
     font-size: 3rem;
@@ -60,40 +64,50 @@ body {
 }
 
 #menos {
-    transition:0.3s;
+    transition: 0.3s;
     background-color: #A70003;
 }
-#menos:hover{
+
+#menos:hover {
     background-color: #5a0002;
     cursor: pointer;
-    
+
 }
 
 #mais {
-    transition:0.3s;
+    transition: 0.3s;
     background-color: #166C00;
 }
-#mais:hover{
+
+#mais:hover {
     background-color: #0f4700;
     cursor: pointer;
 }
 
 #salvarLista {
     width: 35%;
-
     font-size: 1.5rem;
     color: white;
     font-weight: bold;
 
     border-radius: .5rem;
     border: none;
-
     background-color: #27C500;
 }
 
-#none{
+#none {
     display: block;
 }
-#block{
+
+#block {
     display: none;
 }
+
+.a-enter-vr-button {
+    display: none !important;
+}
+
+a-scene {
+    pointer-events: none !important;
+}
+

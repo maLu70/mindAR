@@ -1,3 +1,4 @@
+
 let modeloAtivo = null;
 let produtoAtivo = null;
 let produtos = [];
@@ -239,4 +240,17 @@ function calcularTotalNutricional() {
 }
 
 
+function salvar() {
+
+    if (modelosAtivos.length >= 1) {
+        const dados = JSON.stringify(modelosAtivos);
+        console.log(dados);
+
+        localStorage.setItem("produtos", dados);
+        window.location.replace("/resources/confirmacao.html");
+    }else{
+        alert("Escaneie ao menos um alimento para o prato!  ")
+    }
+
+}
 window.addEventListener("load", carregarProdutos);

@@ -1,16 +1,21 @@
-function enterFullScreen() {
-    console.log("oi")
-    document.documentElement.requestFullscreen()
-    
+function proximap() {
+    document.documentElement.requestFullscreen();
+    const container = document.getElementById("container");
+    container.style.display = "none";
+    const bloco = document.getElementById("trocarblock");
+    bloco.style.display = "flex";
+    bloco.style.position = "absolute";
+    bloco.style.width = "100vw";
+    bloco.style.height = "100vh";
+    bloco.style.zIndex = "10";
 }
 
-function proximap(){
-    enterFullScreen();
-    const block = document.getElementById("trocarblock");
-    block.style.display = "block"
-    block.style.zIndex = "999"
-    const none = document.getElementById("container");
-    none.style.zIndex = "0"
-    none.style.display = "none";
-    
-}
+const cena = document.getElementById("scene");
+    cena.style.display = "flex";
+    cena.style.position = "absolute";
+    cena.style.width = "100vw";
+    cena.style.height = "100vh";
+    cena.style.zIndex = "1";
+
+
+
