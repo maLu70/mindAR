@@ -49,7 +49,7 @@
       "id": 3,
       "nome": "Arroz",
       "modelo": "https://raw.githubusercontent.com/maLu70/RepositorioModel-PratoFeito/refs/heads/main/rice/scene.gltf",
-      "foto": "https://raw.githubusercontent.com/maLu70/RepositorioModel-PratoFeito/main/img/arroz.webp",
+      "foto": "https://raw.githubusercontent.com/maLu70/RepositorioModel-PratoFeito/main/img/arroz.jpg",
       "peso": 100,
       "categoria": "Carboidrato",
       "valor_energetico": 128.3,
