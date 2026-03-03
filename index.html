@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -25,12 +25,12 @@
 
 <body>
 
-    <div id="container" style="z-index: 3;">
-        <img src="./img/logoProvisória.png" alt="">
+    <div id="container">
+        <img src="./img/logo.png" alt="">
 
         <div id="buttons">
-            <button id="tutorial" onclick="comoJogar()">Como jogar</button>
-            <button onclick="proximap()" id="comecar">Começar</button>
+            <button id="tutorial" onclick="comoJogar()" type="button">Como jogar</button>
+            <button onclick="proximap()" id="comecar" type="button">Começar</button>
         </div>
     </div>
 
@@ -43,15 +43,14 @@
             </div>
 
             <div id="controls">
-                <button id="menos" onclick="menos()">-</button>
+                <button id="menos" type="button" onclick="menos()">-</button>
                 <button id="salvarLista" type="submit" onclick="salvar()">Analisar</button>
-                <button id="mais" onclick="mais()">+</button>
+                <button id="mais" onclick="mais()" type="button">+</button>
             </div>
         </div>
 
         <a-scene mindar-image="imageTargetSrc: ./mind/targets.mind; maxTrack: 10; uiScanning: false; uiLoading: false"
-            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true id="scene"
-            device-orientation-permission-ui="enabled: true">
+            vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true id=scene">
             <a-assets id="assets"></a-assets>
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         </a-scene>

@@ -11,7 +11,7 @@ function proximap() {
 }
 
 function comoJogar() {
-    window.location.replace("../resources/regras.html");
+    window.location.replace("./resources/regras.html");
 }
 
 function incial() {
