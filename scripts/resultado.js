@@ -1,7 +1,6 @@
 function telafinal(){
     const prodfinal = new produtos;
     const produtoescaneados = localStorage.getItem("produtos");
-    const peso = null;
     produtoescaneados.array.forEach(produto => {
         prodfinal.peso += produto.peso;
         prodfinal.valor_energetico += produto.valor_energetico;
