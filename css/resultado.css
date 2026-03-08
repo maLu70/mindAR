@@ -149,8 +149,7 @@ h4 {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 20px solid orange;
-
-    position: relative;
+    position: relative;;
     top: 8px;
 }
 
