@@ -1,11 +1,19 @@
-function telafinal(){
-     const prodfinal = {
-        valor_energetico:0.35,
-        proteinas:0.35,
-        carboidratos:0.35,
-        gorduras:0.35,
-        fibras:0.35,
-        sodio:0.35
+
+document.addEventListener("DOMContentLoaded", () => {
+    localStorage.removeItem('prodfinal');
+});
+
+function telafinal() {
+
+
+    localStorage.removeItem('prodfinal');
+    const prodfinal = {
+        valor_energetico: 0.58,
+        proteinas: 0.25,
+        carboidratos: 0.35,
+        gorduras: 0.95,
+        fibras: 0.05,
+        sodio: 0.15
     };
 
 /*    const produtoescaneados = JSON.parse(localStorage.getItem("produtos"));
