@@ -6,6 +6,3 @@ if (produtosS.length <= 0) {
     confirmar.style.backgroundColor = "gray";
     confirmar.onclick = null;
 }
-
-
-

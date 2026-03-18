@@ -263,4 +263,3 @@ function salvar() {
 
 }
 document.querySelector("a-scene").addEventListener("loaded", carregarProdutos);
-

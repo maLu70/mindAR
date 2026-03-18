@@ -38,7 +38,7 @@ h1 {
 .alimento {
     width: 85%;
     height: 9vw;
-    background-color: ff;
+    background-color: #fff;
     border-radius: .8rem;
 
     display: flex;
