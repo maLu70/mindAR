@@ -16,7 +16,10 @@ function moverPonteiro(valor) {
     }
     return pos;
 }
+
+
 prodfinal = JSON.parse(localStorage.getItem("prodfinal"));
+console.log(prodfinal);
 
 setacaloria = document.getElementById("ponteiroprocalorias");
 console.log("Posição Calorias: " + moverPonteiro(prodfinal.valor_energetico));

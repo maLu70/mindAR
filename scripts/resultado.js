@@ -7,16 +7,8 @@ function telafinal() {
 
 
     localStorage.removeItem('prodfinal');
-    const prodfinal = {
-        valor_energetico: 0.58,
-        proteinas: 0.25,
-        carboidratos: 0.35,
-        gorduras: 0.95,
-        fibras: 0.05,
-        sodio: 0.15
-    };
 
-/*    const produtoescaneados = JSON.parse(localStorage.getItem("produtos"));
+    const produtoescaneados = JSON.parse(localStorage.getItem("produtos"));
     produtoescaneados.array.forEach(produto => {
         prodfinal.peso += produto.peso;
         prodfinal.valor_energetico += produto.valor_energetico;
@@ -34,6 +26,6 @@ function telafinal() {
     prodfinal.fibras = (25/prodfinal.fibras).toFixed(2);
     prodfinal.sodio = (2400/prodfinal.sodio).toFixed(2);
 
-*/  localStorage.setItem("prodfinal", JSON.stringify(prodfinal));
+    localStorage.setItem("prodfinal", JSON.stringify(prodfinal));
     window.location.href = "resultado.html";
 }
