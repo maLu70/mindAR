@@ -5,4 +5,5 @@ if (produtosS.length <= 0) {
     const confirmar = document.getElementById("confirmar");
     confirmar.style.backgroundColor = "gray";
     confirmar.onclick = null;
+    confirmar.style.cursor = "not-allowed";
 }

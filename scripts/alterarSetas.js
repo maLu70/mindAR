@@ -1,7 +1,6 @@
 function moverPonteiro(valor) {
 
     let pos;
-
     if (valor <= 0.3) {
         pos = (valor / 0.3) * 33.33;
     }
@@ -12,7 +11,7 @@ function moverPonteiro(valor) {
         pos = 66.66 + ((valor - 0.4) / 0.6) * 33.34;
     }
     else {
-        pos = 100;
+        pos = 98.5;
     }
     return pos;
 }
@@ -20,6 +19,7 @@ function moverPonteiro(valor) {
 
 prodfinal = JSON.parse(localStorage.getItem("prodfinal"));
 console.log(prodfinal);
+
 
 setacaloria = document.getElementById("ponteiroprocalorias");
 console.log("Posição Calorias: " + moverPonteiro(prodfinal.valor_energetico));
@@ -35,6 +35,9 @@ console.log("Posição Gorduras: " + moverPonteiro(prodfinal.gorduras));
 
 setafibras = document.getElementById("ponteiroprofibras");
 console.log("Posição Fibras: " + moverPonteiro(prodfinal.fibras));
+
+setasodio = document.getElementById("ponteiroprosodio");
+console.log("Posição Sódio: " + moverPonteiro(prodfinal.sodio));
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -54,8 +57,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (i <= moverPonteiro(prodfinal.fibras)) {
             setafibras.style.left = (i) + "%";
         }
+        if (i<= moverPonteiro(prodfinal.sodio)) {
+            setasodio.style.left = (i) + "%";
+        }
         await new Promise(resolve => setTimeout(resolve, 0.1));
-        console.log(i);
     }
 
 });
