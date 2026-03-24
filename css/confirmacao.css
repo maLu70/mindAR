@@ -52,6 +52,7 @@ h1 {
     width: 28%;
     height: 80%;
     border-radius: 50%;
+    margin-right: 20px;
 
     object-fit: cover;
 }
@@ -59,7 +60,6 @@ h1 {
 .bloc1 {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     width: 36%;
     height: 100%;
