@@ -33,7 +33,6 @@ h1 {
     font-family: "Playfair Display", serif;
     margin: 0;
     margin-bottom: 1rem;
-    width: 85%;
 }
 
 #alimentosPrato {
@@ -204,4 +203,23 @@ h4 {
 
 .legenda .legAcima {
     text-align: right;
+}
+
+#cabecalho {
+    display: flex;
+    width: 85%;
+
+    justify-content: space-between;
+
+}
+
+#nota {
+    display: flex;
+
+    align-items: baseline;
+
+}
+
+#suaNota {
+    font-family: "Inter", sans-serif;
 }

@@ -60,15 +60,13 @@ p {
     text-indent: 1.5em
 }
 
-#btnsRegras {
-    width: 85%;
-    height: 6vh;
+#voltar {
+    width: 90%;
+    height: 8vh;
     margin-top: 1rem;
 
-    display: flex;
-    justify-content: space-between;
-
     margin: 5% 0;
+
 }
 
 button {
@@ -104,7 +102,7 @@ button {
 }
 
 .avisoResp p {
-    font-size: .7rem;
+    font-size: .9rem;
     line-height: 1rem;
     color: #0b57d0;
     text-align: center;
