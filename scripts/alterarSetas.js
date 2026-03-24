@@ -16,6 +16,25 @@ function moverPonteiro(valor) {
     return pos;
 }
 
+let nota;
+function calcularnota(valor){
+    if (valor<=0.3) {
+        if (valor <= 0.3) {
+        nota = valor*33.33;
+    }
+    else if (valor <= 0.4) {
+        nota = 100;
+    }
+    else if (valor <= 1) {
+        pos = 66.66 + ((valor - 0.4) / 0.6) * 33.34;
+    }
+    else {
+        pos = 98.5;
+    }
+    }
+    return pos;
+}
+
 
 prodfinal = JSON.parse(localStorage.getItem("prodfinal"));
 console.log(prodfinal);
