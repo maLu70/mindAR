@@ -16,23 +16,36 @@ function moverPonteiro(valor) {
     return pos;
 }
 
-let nota;
+
 function calcularnota(valor){
+    let nota = 0;
     if (valor<=0.3) {
         if (valor <= 0.3) {
-        nota = valor*33.33;
+        nota = valor*333.33;
     }
     else if (valor <= 0.4) {
         nota = 100;
     }
     else if (valor <= 1) {
-        pos = 66.66 + ((valor - 0.4) / 0.6) * 33.34;
-    }
-    else {
-        pos = 98.5;
+        nota = (-166,67*valor)+166,67;
     }
     }
-    return pos;
+    if (valor>1) {
+        nota=0;
+    }
+    return nota;
+}
+
+function notageral(){
+    let nota = 0;
+    nota += calcularnota(prodfinal.valor_energetico);
+    nota += calcularnota(prodfinal.proteinas)
+    nota += calcularnota(prodfinal.carboidratos)
+    nota += calcularnota(prodfinal.gorduras)
+    nota += calcularnota(prodfinal.fibras)
+    nota += calcularnota(prodfinal.sodio)
+    nota = nota/6
+    return nota;
 }
 
 
@@ -60,7 +73,9 @@ console.log("Posição Sódio: " + moverPonteiro(prodfinal.sodio));
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-    for (let i = 0; i <= 100; i += 0.1) {
+    let index = 0;
+    for (let i = 0; i <= 100; i += 1) {
+        const inteiro = 0;
         if (i <= moverPonteiro(prodfinal.valor_energetico)) {
             setacaloria.style.left = (i) + "%";
         }
@@ -79,7 +94,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (i<= moverPonteiro(prodfinal.sodio)) {
             setasodio.style.left = (i) + "%";
         }
-        await new Promise(resolve => setTimeout(resolve, 0.1));
+        if (notageral()>=index && index>= i ) {
+            document.getElementById("suaNota").textContent=String(index);
+            if (index>=0 && index<=40) {
+                document.getElementById("suaNota").style.color="red";
+            }
+            if (index>=41 && index<=60) {
+                document.getElementById("suaNota").style.color="orange";
+            }
+            if (index>=61 && index<=100) {
+                document.getElementById("suaNota").style.color="green";
+            }
+            if (index==100) {
+                document.getElementById("suaNota").style.fontSize="3rem";
+                document.getElementById("suaNota").style.textShadow="#ffcc00 1px 0 10px";
+
+            }
+            index++;
+        }
+        
+        await new Promise(resolve => setTimeout(resolve, 30));
     }
+
+
 
 });
