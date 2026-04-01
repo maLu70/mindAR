@@ -114,13 +114,13 @@ function atualizarProduto(produto, pesoAdicionado) {
 
     const multiplicador = (pesoOriginal + pesoAdicionado) / pesoOriginal;
 
-    produto.peso *= multiplicador;
-    produto.valor_energetico *= multiplicador;
-    produto.proteinas *= multiplicador;
-    produto.carboidratos *= multiplicador;
-    produto.gorduras *= multiplicador;
-    produto.fibras *= multiplicador;
-    produto.sodio *= multiplicador;
+    produto.peso = parseFloat((produto.peso * multiplicador).toFixed(0));
+    produto.valor_energetico = parseFloat((produto.valor_energetico * multiplicador).toFixed(0));
+    produto.proteinas = parseFloat((produto.proteinas * multiplicador).toFixed(0));
+    produto.carboidratos = parseFloat((produto.carboidratos * multiplicador).toFixed(0));
+    produto.gorduras = parseFloat((produto.gorduras * multiplicador).toFixed(0));
+    produto.fibras = parseFloat((produto.fibras * multiplicador).toFixed(0));
+    produto.sodio = parseFloat((produto.sodio * multiplicador).toFixed(0));
 
     if (produto.escala) {
         produto.escala.x *= multiplicador;
@@ -146,7 +146,6 @@ function atualizarProduto(produto, pesoAdicionado) {
 function mais() {
     if (modeloAtivo && produtoAtivo) {
         atualizarProduto(produtoAtivo, 10);
-
         const scale = modeloAtivo.getAttribute("scale");
         const newScale = {
             x: scale.x * 1.1,
