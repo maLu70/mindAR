@@ -226,3 +226,27 @@ h4 {
 #suaNota {
     font-family: "Inter", sans-serif;
 }
+
+.avisoResp {
+    background-color: #c2e7ff;
+    border-radius: 1rem;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+
+
+    box-shadow: 0 0 15px 0 hsla(207, 100%, 31%, 0.527);
+
+    padding: 0;
+
+}
+
+.avisoResp p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #0b57d0;
+    text-align: center;
+    
+    width: 90%;
+
+}
